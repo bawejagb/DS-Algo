@@ -1,5 +1,9 @@
 /*
 Radix Sort
+:The idea of Radix Sort is to do expr by expr sort starting 
+from least significant expr to most significant expr. 
+Radix sort uses counting sort as a subroutine to sort 
+positive elements.
 Made by: Gaurav Baweja
 */
 #include<iostream>
@@ -12,35 +16,37 @@ void display(int size, int arr[])
     cout << endl;
 }
 
-void CountingSort(int n, int arr[])
+void CountingSort(int n, int arr[], int expr)
 {
-    int min, max, temp[n];
-    min = max = arr[0];
-    for(int i = 1; i < n; i++)
-    {
-        if(min > arr[i])
-            min = arr[i];
-        if(max < arr[i])
-            max = arr[i];
-    }
-    int count[max-min+1] = {0};
+    int temp[n], count[10] = {0};    
     for(int i = 0; i < n; i++)
-        count[arr[i]-min]++;
-    for(int i = 1; i < max-min+1; i++)
+        count[(arr[i]/expr)%10]++;
+    for(int i = 1; i <10; i++)
         count[i] = count[i-1] + count[i];
     for(int i = n-1; i >= 0; i--)
-        temp[--count[arr[i]-min]] = arr[i]; 
+        temp[--count[(arr[i]/expr)%10]] = arr[i]; 
     for(int i = 0; i < n; i++)
         arr[i] = temp[i];
 }
 
+void RadixSort(int n, int arr[])
+{
+    int expr, max;
+    max = arr[0];
+    for(int i = 1; i < n; i++)
+        if(max < arr[i])
+            max = arr[i];
+    for(int expr = 1; max / expr > 0; expr *= 10)
+        CountingSort(n, arr, expr);
+}
+
 main()
 {
-    int size = 10;
-     int arr[size] = {10,8,5,9,12,9,9,3,4,2};
+    int size = 10;  //Sample Data array size
+     int arr[size] = {170, 45, 75, 90, 802, 24, 2, 66, 1111, 9};   //Sample Data Set
      cout << "Unsorted List:\n";
      display(size, arr);
-     CountingSort(size, arr);
+     RadixSort(size, arr);
      cout << "Sorted List:\n";
      display(size, arr);
      return 0;

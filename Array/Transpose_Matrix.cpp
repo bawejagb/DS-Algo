@@ -1,8 +1,7 @@
 /*
-Qn4.3. Find the Transpose of a Matrix
+Qn. Find the Transpose of a Matrix
 
 Made By : Gaurav baweja
-Date: 	  28-07-2020
 */
 #include<iostream>
 using namespace std;

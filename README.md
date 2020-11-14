@@ -16,4 +16,5 @@ This is the repo of Data Structure and Algorithms implemented in **C++**.
 * **Stack**
 * **Queue**
 * **Sorting_Algo**
+* **Hashing**
 

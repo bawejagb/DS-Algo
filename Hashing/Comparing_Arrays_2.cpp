@@ -1,5 +1,5 @@
 /*
-Q 2. You are provided with two arrays. 
+You are provided with two arrays. 
 Write a program to find numbers which 
 are present in first array, 
 but not present in the second array.

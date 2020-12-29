@@ -46,7 +46,7 @@ void dijkstraSP(map<T,list<pair<int,T> > > &adjList, T start)
         st.erase(st.begin());
         for(auto adj : adjList[vx])
         {
-            if(adj.first + refList[vx].first < refList[adj.second].first)
+            if((refList[vx].first != INT_MAX) && (adj.first + refList[vx].first < refList[adj.second].first))
             {
                 auto old_pair = st.find(make_pair(refList[adj.second].first,adj.second));
                 if(old_pair != st.end())

@@ -1,5 +1,5 @@
 /*
-Qn. Find the matrix multiplication
+Find the matrix multiplication
 
 Made By : Gaurav baweja
 */

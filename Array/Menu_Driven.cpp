@@ -1,5 +1,5 @@
 /*
-Qn- Develop a Menu driven program to demonstrate the following operations of
+Develop a Menu driven program to demonstrate the following operations of
 Arrays
 ��MENU��-
 1.CREATE

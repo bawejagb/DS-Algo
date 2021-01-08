@@ -1,5 +1,5 @@
 /*
-Qn. Find the Transpose of a Matrix
+Find the Transpose of a Matrix
 
 Made By : Gaurav baweja
 */

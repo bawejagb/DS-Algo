@@ -1,5 +1,5 @@
 /*
-Qn. Reverse the elements of an array
+Reverse the elements of an array
 
 Made By : Gaurav baweja
 

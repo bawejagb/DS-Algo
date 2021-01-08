@@ -1,5 +1,5 @@
 /*
-Qn. Design the Logic to Find a Missing Number 
+Design the Logic to Find a Missing Number 
 in a Sorted Array from 1 to n.
 
 Made By : Gaurav baweja

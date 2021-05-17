@@ -1,3 +1,8 @@
+/*
+Eulerian path and circuit algorithm
+
+Made By : Gaurav Baweja
+*/
 #include<bits/stdc++.h>
 using namespace std;
 

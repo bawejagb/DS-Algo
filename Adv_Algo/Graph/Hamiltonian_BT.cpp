@@ -1,3 +1,8 @@
+/*
+Hamiltonian path algorithm
+
+Made By : Gaurav Baweja
+*/
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -29,7 +34,7 @@ void Hamiltonian(int V, vector<int> &R, vector<vector<bool>> &G){
     }
 }
 
-#define OFLINE_JUDGE 1
+#define OFLINE_JUDGE 0
 main(){
     #if OFLINE_JUDGE > 0
 	freopen("../input.txt", "r", stdin);

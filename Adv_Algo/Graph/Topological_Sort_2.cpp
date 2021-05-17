@@ -1,3 +1,8 @@
+/*
+Topological Sort Disjoint Set algorithm
+
+Made By : Gaurav Baweja
+*/
 #include<bits/stdc++.h>
 using namespace std;
 
@@ -19,7 +24,7 @@ vector<int> TopologicalSort(vector<vector<int>> G, int N){
     return res;
 }
 
-#define OFLINE_JUDGE 1
+#define OFLINE_JUDGE 0
 main(){
     #if OFLINE_JUDGE > 0
 	freopen("../input.txt", "r", stdin);

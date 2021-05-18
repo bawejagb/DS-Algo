@@ -17,14 +17,15 @@ void show(){
 int GraphColoring(vector<vector<int>> Graph, int N){
     vector<pair<int,int>> deg(N);
     for(int i = 0; i < N; i++)
-        deg[i] = {i, Graph[i].size()};
+        deg[i] = {Graph[i].size(),i};
     sort(deg.rbegin(), deg.rend());
     int crom = 0;
     for(int i = 0; i < N; i++){
-        if(color[i] != 0)
+        int ver = deg[i].second;
+        if(color[ver] != 0)
             continue;
         crom++;
-        color[i] = crom;
+        color[ver] = crom;
         for(int j = 0; j < N; j++){
             bool flag = 1;
             if(color[j] != 0)
@@ -47,7 +48,7 @@ main(){
 	freopen("../output.txt", "w", stdout);
 	#endif
     int N, edges, a, b;
-    cin >> N >> edges;
+    cin >> N >> edges; // Vertices | edges
     vector<vector<int>> Graph(N);
     for(int i = 0; i < edges; i++){
         cin >> a >> b;

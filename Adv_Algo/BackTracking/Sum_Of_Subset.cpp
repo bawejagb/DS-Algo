@@ -13,22 +13,22 @@ void show(){
 }
 
 bool checkFeasible(int St[], int W, int wt, int total, int idx){
-    return (wt + total >= W) && (wt == W || wt + St[idx] <= W);
+    return ((wt + total) >= W) && ((wt + St[idx]) <= W);
 }
 
 void SumOfSubset(int St[], int N, int W, int wt, int total, int idx){
-    if(idx > N)
+    //cout << "(" << wt << "," << total << ")";
+    if(wt == W){
+        show();
+        return;
+    }
+    if(idx >= N)
         return;
     if(checkFeasible(St, W, wt, total, idx)){
-        if(wt == W){
-            show();
-        }
-        else{
-            res.push_back(St[idx]);
-            SumOfSubset(St, N, W, wt+St[idx], total-St[idx], idx+1);
-            res.pop_back();
-            SumOfSubset(St, N, W, wt, total-St[idx], idx+1);
-        }
+        res.push_back(St[idx]);
+        SumOfSubset(St, N, W, wt+St[idx], total-St[idx], idx+1);
+        res.pop_back();
+        SumOfSubset(St, N, W, wt, total-St[idx], idx+1);
     }
 }
 
@@ -45,7 +45,7 @@ main(){
         cin >> St[i];
         total += St[i];
     }
-    
+    sort(St, St+N);
     SumOfSubset(St, N, W, 0, total, 0);
     return 0;
 }

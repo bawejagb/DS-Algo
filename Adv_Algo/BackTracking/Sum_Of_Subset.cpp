@@ -17,7 +17,7 @@ bool checkFeasible(int St[], int W, int wt, int total, int idx){
 }
 
 void SumOfSubset(int St[], int N, int W, int wt, int total, int idx){
-    if(idx >= N)
+    if(idx > N)
         return;
     if(checkFeasible(St, W, wt, total, idx)){
         if(wt == W){

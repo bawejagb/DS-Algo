@@ -23,7 +23,7 @@ int Knapsack(int idx, int weight){
         return Knapsack(idx+1, weight);
 }
 
-#define OFLINE_JUDGE 1
+#define OFLINE_JUDGE 0
 main(){
     #if OFLINE_JUDGE > 0
 	freopen("../input.txt", "r", stdin);

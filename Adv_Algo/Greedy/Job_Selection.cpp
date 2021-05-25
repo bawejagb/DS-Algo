@@ -22,17 +22,21 @@ vector<Job> FindJobSeq(Job lis[], int size){
     vector<Job> res;
     Job k;
     int mx = maxDline(lis, size);
-    bool slot[mx+1]{};
+    int slot[mx+1]{};
     for(int i = 0; i < size; i++){
         k = lis[i];
         for(int j = k.dline; j > 0; j--){
-            if(!slot[k.dline]){
-                slot[k.dline] = 1;
+            if(!slot[j]){
+                slot[j] = k.id;
                 res.push_back(k);
                 break;
             }
         }
     }
+    cout << "Job order:\n";
+    for(int i = 1; i <= mx; i++)
+        cout << slot[i] << '|';
+    cout << "\n";
     return res;
 }
 
